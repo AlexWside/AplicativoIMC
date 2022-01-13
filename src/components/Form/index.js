@@ -1,7 +1,7 @@
 import  React,{ useState } from 'react' 
 import {View, Text, TextInput, StyleSheet, Button} from 'react-native'
 import ResultImc from './ResultImc'
-
+import style from './style'
 export default function Form(){
 
   const [height, setHeight] = useState(null)
@@ -32,7 +32,7 @@ export default function Form(){
   return (
         <View>
           
-          <View style="styles.form">
+          <View style={style.formContent}>
           <Text>Altura</Text>
           <TextInput  
           onChangeText={setHeight} value={height} placeholder='Ex: 1.75'
@@ -51,11 +51,3 @@ export default function Form(){
 }
 
 
-const styles = StyleSheet.create({
-  form: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
