@@ -1,5 +1,5 @@
 import  React,{ useState } from 'react' 
-import {View, Text, TextInput, StyleSheet, Button} from 'react-native'
+import {View, Text, TextInput,  TouchableOpacity} from 'react-native'
 import ResultImc from './ResultImc'
 import style from './style'
 export default function Form(){
@@ -30,20 +30,31 @@ export default function Form(){
      setMessageImc("preencha os dados")
   }
   return (
-        <View>
+        <View style={style.formContent}>
           
-          <View style={style.formContent}>
-          <Text>Altura</Text>
+          <View style={style.form}>
+          <Text style={style.formLabel}>Altura</Text>
           <TextInput  
+          style={style.input}
           onChangeText={setHeight} value={height} placeholder='Ex: 1.75'
           keyboardType='numeric'></TextInput>
-          <Text>peso</Text>
-          <TextInput onChangeText={setWeight} value={weight} placeholder='Ex: 75'
+          <Text style={style.formLabel}>peso</Text>
+          <TextInput
+            style={style.input}
+          onChangeText={setWeight} value={weight} placeholder='Ex: 75'
           keyboardType='numeric'></TextInput>
-          <Button onPress={() =>Validacao()} title={textButton}/>
-
-          <ResultImc messageResultImc={messageImc} resultImc={imc} />
+          
+          <TouchableOpacity 
+          style={style.buttonCalc}  
+          onPress={
+            () =>Validacao()
+            } 
+            title={textButton}>
+            <Text style={style.textButtonCalc}>{textButton}</Text>
+          </TouchableOpacity>
+          
         </View>
+        <ResultImc  messageResultImc={messageImc} resultImc={imc} />
         </View>
     
 
