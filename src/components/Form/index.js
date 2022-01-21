@@ -6,7 +6,7 @@ export default function Form(){
 
   const [height, setHeight] = useState(null)
   const [weight, setWeight] = useState(null)
-  const [messageImc, setMessageImc] = useState('preenhe a altura ai covarda')
+  const [messageImc, setMessageImc] = useState('preenche os dados ai covarde')
   const [imc, setImc] = useState(null)
   const [textButton, setTextButton] = useState('calcular')
 
@@ -38,7 +38,7 @@ export default function Form(){
           style={style.input}
           onChangeText={setHeight} value={height} placeholder='Ex: 1.75'
           keyboardType='numeric'></TextInput>
-          <Text style={style.formLabel}>peso</Text>
+          <Text style={style.formLabel}>Peso</Text>
           <TextInput
             style={style.input}
           onChangeText={setWeight} value={weight} placeholder='Ex: 75'
