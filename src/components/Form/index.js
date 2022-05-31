@@ -6,7 +6,7 @@ export default function Form(){
 
   const [height, setHeight] = useState(null)
   const [weight, setWeight] = useState(null)
-  const [messageImc, setMessageImc] = useState('preenche os dados ai covarde')
+  const [messageImc, setMessageImc] = useState('preenche os dados ai')
   const [imc, setImc] = useState(null)
   const [textButton, setTextButton] = useState('calcular')
 
